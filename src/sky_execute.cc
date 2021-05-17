@@ -158,7 +158,7 @@ void sky_execute_internal(zend_execute_data *execute_data, zval *return_value) {
             span = sky_pdo(execute_data, class_name, function_name);
         } else if (strcmp(class_name, "mysqli") == 0){
             span = sky_plugin_mysqli(execute_data, class_name, function_name);
-        } else if (strcmp(class_name, "Redis") == 0 || strcmp(class_name, "RedisCluster") || strcmp(class_name, "RedisSentinel")) == 0) {
+        } else if (strcmp(class_name, "Redis") == 0 || strcmp(class_name, "RedisCluster") == 0 || strcmp(class_name, "RedisSentinel") == 0) {
             span = sky_plugin_redis(execute_data, class_name, function_name);
         }
     } else if (function_name != nullptr) {
